@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import javax.naming.NamingException;
-import khoatha.order.OrderDAO;
 import khoatha.product.ProductDAO;
 import khoatha.product.ProductDTO;
 

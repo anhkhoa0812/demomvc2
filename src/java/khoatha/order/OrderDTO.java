@@ -69,6 +69,4 @@ public class OrderDTO implements Serializable {
     public void setTotal(float total) {
         this.total = total;
     }
-    
-    
 }

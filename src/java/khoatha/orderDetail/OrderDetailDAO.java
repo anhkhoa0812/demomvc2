@@ -59,6 +59,7 @@ public class OrderDetailDAO implements Serializable{
         }
         return result;   
     }
+    
     private List<OrderDetailDTO> orderDetails;
 
     public List<OrderDetailDTO> getOrderDetails() {
@@ -98,6 +99,7 @@ public class OrderDetailDAO implements Serializable{
                     this.orderDetails.add(dto);
                 }
             }
+            
         } finally {
             if(rs != null) {
                 rs.close();
