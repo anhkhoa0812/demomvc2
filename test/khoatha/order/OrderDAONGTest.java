@@ -42,25 +42,25 @@ public class OrderDAONGTest {
 
     }
 
-//    @Test
-//    public void testInsertOrder() {
-//        try {
-//            OrderDAO orderDAO = new OrderDAO();
-//            String orderId = "OD123";
-//            float total = 100.0F;
-//            
-//            boolean result = orderDAO.insertOrder(orderId, total);
-//            
-//            assertTrue(result, "Insert Order must be true");
-//        } catch (NamingException e) {
-//            Assert.fail("Naming Exception: " + e.getMessage());
-//        } catch (SQLException e) {
-//            Assert.fail("SQL Exception: " + e.getMessage());
-//        } catch (ClassNotFoundException e) {
-//            Assert.fail("Class Not Found Exception: " + e.getMessage());
-//        }
-//
-//    }
+    @Test
+    public void testInsertOrder() {
+        try {
+            OrderDAO orderDAO = new OrderDAO();
+            String orderId = "OD123";
+            float total = 100.0F;
+            
+            boolean result = orderDAO.insertOrder(orderId, total);
+            
+            assertTrue(result, "Insert Order must be true");
+        } catch (NamingException e) {
+            Assert.fail("Naming Exception: " + e.getMessage());
+        } catch (SQLException e) {
+            Assert.fail("SQL Exception: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            Assert.fail("Class Not Found Exception: " + e.getMessage());
+        }
+
+    }
     
     @Test 
     public void testShowOrderByIDWithValidID() {

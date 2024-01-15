@@ -22,7 +22,7 @@ public class OrderDTONGTest {
     public OrderDTONGTest() {
     }
     
-        @Test
+    @Test
     public void testGetterAndSetter() {
         OrderDTO orderDTO = new OrderDTO();
         
