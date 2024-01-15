@@ -5,15 +5,10 @@
  */
 package khoatha.order;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import javax.naming.NamingException;
 import org.testng.Assert;
 import static org.testng.Assert.*;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
@@ -99,52 +94,4 @@ public class OrderDAONGTest {
         }
     }
 
-//    @BeforeClass
-//    public static void setUpClass() throws Exception {
-//    }
-//
-//    @AfterClass
-//    public static void tearDownClass() throws Exception {
-//    }
-//
-//    @BeforeMethod
-//    public void setUpMethod() throws Exception {
-//    }
-//
-//    @AfterMethod
-//    public void tearDownMethod() throws Exception {
-//    }
-//
-//    @Test
-//    public void testCountOrder() throws Exception {
-//        System.out.println("countOrder");
-//        OrderDAO instance = new OrderDAO();
-//        int expResult = 0;
-//        int result = instance.countOrder();
-//        assertEquals(result, expResult);
-//        fail("The test case is a prototype.");
-//    }
-//
-//    @Test
-//    public void testInsertOrder() throws Exception {
-//        System.out.println("insertOrder");
-//        String orderID = "";
-//        float total = 0.0F;
-//        OrderDAO instance = new OrderDAO();
-//        boolean expResult = false;
-//        boolean result = instance.insertOrder(orderID, total);
-//        assertEquals(result, expResult);
-//        fail("The test case is a prototype.");
-//    }
-//
-//    @Test
-//    public void testShowOrderByID() throws Exception {
-//        System.out.println("showOrderByID");
-//        String id = "";
-//        OrderDAO instance = new OrderDAO();
-//        OrderDTO expResult = null;
-//        OrderDTO result = instance.showOrderByID(id);
-//        assertEquals(result, expResult);
-//        fail("The test case is a prototype.");
-//    }
 }
