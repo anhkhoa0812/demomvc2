@@ -20,7 +20,7 @@ import khoatha.utils.DBHelper;
  * @author tahoa
  */
 public class OrderDetailDAO implements Serializable{
-    public boolean crateOrderDetail(OrderDetailDTO orderDetail) throws NamingException, SQLException {
+    public boolean crateOrderDetail(OrderDetailDTO orderDetail) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         boolean result = false;
@@ -66,7 +66,7 @@ public class OrderDetailDAO implements Serializable{
         return orderDetails;
     }
     
-    public void showOrderDetailByOrderID(String orderID) throws NamingException, SQLException {
+    public void showOrderDetailByOrderID(String orderID) throws NamingException, SQLException, ClassNotFoundException {
         Connection con= null;
         PreparedStatement stm = null;
         ResultSet rs = null;

@@ -20,7 +20,7 @@ import khoatha.utils.DBHelper;
  */
 public class OrderDAO implements Serializable {
 
-    public int countOrder() throws SQLException, NamingException {
+    public int countOrder() throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -56,7 +56,7 @@ public class OrderDAO implements Serializable {
 
     }
 
-    public boolean insertOrder(String orderID, float total) throws NamingException, SQLException {
+    public boolean insertOrder(String orderID, float total) throws NamingException, SQLException, ClassNotFoundException {
         boolean result = false;
         Connection con = null;
         PreparedStatement stm = null;
@@ -96,7 +96,7 @@ public class OrderDAO implements Serializable {
 
         return result;
     }
-    public OrderDTO showOrderByID(String id) throws NamingException, SQLException {
+    public OrderDTO showOrderByID(String id) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;

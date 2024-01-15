@@ -4,6 +4,6 @@
         name="SE1708DS" type="javax.sql.DataSource" auth="Container" 
         driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
         url="jdbc:sqlserver://localhost:1433;databaseName=SE1708"
-        username="sa" password="12345"
+        username="sa" password="123456aA@$"
         />
 </Context>

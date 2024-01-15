@@ -22,7 +22,7 @@ import khoatha.utils.DBHelper;
 public class RegistrationDAO implements Serializable {
 
 //    public boolean checkLogin(String username, String password) throws SQLException, NamingException {
-    public RegistrationDTO checkLogin(String username, String password) throws SQLException, NamingException {
+    public RegistrationDTO checkLogin(String username, String password) throws SQLException, NamingException, ClassNotFoundException {
 
         Connection con = null;
         PreparedStatement stm = null;
@@ -77,7 +77,7 @@ public class RegistrationDAO implements Serializable {
         return accounts;
     }
 
-    public void searchLastName(String searchValue) throws SQLException, NamingException {
+    public void searchLastName(String searchValue) throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -127,7 +127,7 @@ public class RegistrationDAO implements Serializable {
 
     }
 
-    public boolean deleteAccount(String username) throws NamingException, SQLException {
+    public boolean deleteAccount(String username) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         boolean result = false;
@@ -161,7 +161,7 @@ public class RegistrationDAO implements Serializable {
         return result;
     }
 
-    public boolean updateAccount(String username, String password, boolean role) throws SQLException, NamingException {
+    public boolean updateAccount(String username, String password, boolean role) throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         boolean result = false;
@@ -231,7 +231,7 @@ public class RegistrationDAO implements Serializable {
 //        }
 //        return result;
 //    }
-    public boolean createAccount(RegistrationDTO account) throws NamingException, SQLException {
+    public boolean createAccount(RegistrationDTO account) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         boolean result = false;

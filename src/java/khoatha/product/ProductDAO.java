@@ -27,7 +27,7 @@ public class ProductDAO implements Serializable {
         return productList;
     }
 
-    public void showProductList() throws SQLException, NamingException {
+    public void showProductList() throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -71,7 +71,7 @@ public class ProductDAO implements Serializable {
         }
     }
 
-    public ProductDTO searchProductById(String id) throws SQLException, NamingException {
+    public ProductDTO searchProductById(String id) throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -113,7 +113,7 @@ public class ProductDAO implements Serializable {
         return result;
     }
 
-    public boolean updateQuantity(String id, int quantity) throws NamingException, SQLException {
+    public boolean updateQuantity(String id, int quantity) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         boolean result = false;
