@@ -70,7 +70,10 @@ public class StarUpServlet extends HttpServlet {
             log("StarUpServlet _ Naming: " + ex.getMessage());
         } catch (SQLException ex) {
             log("StarUpServlet _ SQL: " + ex.getMessage());
-        } finally {
+        } catch (ClassNotFoundException ex) {
+            log("StarUpServlet _ ClassNotFound: " + ex.getMessage());
+        } 
+        finally {
             //Forward hay sendRedirect cũng đc vì khi reponse trả về nó ko mất
             response.sendRedirect(url);
         }

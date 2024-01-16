@@ -79,7 +79,10 @@ public class UpdateAccountServlet extends HttpServlet {
             log("UpdateAccountServlet _ SQL: " + ex.getMessage());
         } catch (NamingException ex) {
             log("UpdateAccountServlet _ Naming: " + ex.getMessage());
-        } finally {
+        } catch (ClassNotFoundException ex) {
+            log("UpdateAccountServlet _ ClassNotFound: " + ex.getMessage());
+        } 
+        finally {
 //            response.sendRedirect(url);
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

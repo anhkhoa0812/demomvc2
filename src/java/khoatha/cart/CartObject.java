@@ -29,7 +29,7 @@ public class CartObject implements Serializable {
         return items;
     }
 
-    public void addItemToCart(String itemID, int quantity) throws SQLException, NamingException {
+    public void addItemToCart(String itemID, int quantity) throws SQLException, NamingException, ClassNotFoundException {
         //1. Check item existed
         if (itemID == null) {
             return;
@@ -67,7 +67,7 @@ public class CartObject implements Serializable {
         this.items.put(dto, quantity);
     }
 
-    public void removeItemFromCart(String itemID) throws SQLException, NamingException {
+    public void removeItemFromCart(String itemID) throws SQLException, NamingException, ClassNotFoundException {
         //1. Check item existed
         if (itemID == null) {
             return;

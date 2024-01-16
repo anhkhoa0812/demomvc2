@@ -65,7 +65,10 @@ public class ShowCheckOutSuccessServlet extends HttpServlet {
             log("ShowCheckOutSuccessServlet _ Naming: " + ex.getMessage());
         } catch (SQLException ex) {
             log("ShowCheckOutSuccessServlet _ SQL: " + ex.getMessage());
-        } finally {
+        } catch (ClassNotFoundException ex) {
+            log("ShowCheckOutSuccessServlet _ ClassNotFound: " + ex.getMessage());
+        } 
+        finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
         }

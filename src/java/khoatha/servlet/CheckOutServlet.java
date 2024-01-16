@@ -95,7 +95,10 @@ public class CheckOutServlet extends HttpServlet {
             log("CheckOutServlet _ Naming: " + ex.getMessage());
         } catch (SQLException ex) {
             log("CheckOutServlet _ SQL: " + ex.getMessage());
-        } finally {
+        }catch (ClassNotFoundException ex) {
+            log("CheckOutServlet _ ClassNotFound: " + ex.getMessage());
+        } 
+        finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
 //            response.sendRedirect(url);

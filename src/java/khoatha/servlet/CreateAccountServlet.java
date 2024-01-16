@@ -101,6 +101,8 @@ public class CreateAccountServlet extends HttpServlet {
                 errors.setUsernameisExisted(username + MyApplicationConstants.RegistrationErrorFeature.USER_EXISTED_ERROR);
                 request.setAttribute("CREATE_ERRORS", errors);
             } //username is duplicated
+        } catch(ClassNotFoundException ex) {
+            log("CreateAccountServlet _ ClassNotFound: " + ex.getMessage());
         }
         finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);

@@ -69,7 +69,10 @@ public class RemoveItemsFromCartServlet extends HttpServlet {
             log("RemoveItemsFromCartServlet _ Naming: " + ex.getMessage());
         } catch (SQLException ex) {
             log("RemoveItemsFromCartServlet  _ SQL: " + ex.getMessage());
-        } finally {
+        } catch (ClassNotFoundException ex) {
+            log("RemoveItemsFromCartServlet  _ ClassNotFound: " + ex.getMessage());
+        }
+        finally {
             //6. refresh --> Gọi là chức năng trước đó (View Your Cart)
             // --> using url writing technique
             String urlRewriting = siteMaps.getProperty("viewCartPage")

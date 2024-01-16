@@ -61,7 +61,9 @@ public class SearchLastNameServlet extends HttpServlet {
             log("SearchLastNameServlet _SQL: " + ex.getMessage());
         } catch(NamingException ex) {
             log("SearchLastNameServlet _ Naming: " + ex.getMessage());
-        }
+        } catch(ClassNotFoundException ex) {
+            log("SearchLastNameServlet _ ClassNotFound: " + ex.getMessage());
+        } 
         finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

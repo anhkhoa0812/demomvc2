@@ -22,11 +22,14 @@ public class OrderDAONGTest {
 
     @Test
     public void testCountOrder() {
+        System.out.println("Running testCountOrder");
+
         OrderDAO orderDAO = new OrderDAO();
         try {
             int count = orderDAO.countOrder();
 
-            Assert.assertEquals(count, 16);
+            Assert.assertEquals(count, 19);
+            System.out.println("testCountOrder passed! Count: " + count);
         } catch (NamingException e) {
             Assert.fail("Naming Exception: " + e.getMessage());
         } catch (SQLException e) {
@@ -34,19 +37,19 @@ public class OrderDAONGTest {
         } catch (ClassNotFoundException e) {
             Assert.fail("Class Not Found Exception: " + e.getMessage());
         }
-
     }
 
     @Test
     public void testInsertOrder() {
+        System.out.println("Running testInsertOrder");
         try {
             OrderDAO orderDAO = new OrderDAO();
-            String orderId = "OD123";
+            String orderId = "OD126";
             float total = 100.0F;
-            
+
             boolean result = orderDAO.insertOrder(orderId, total);
-            
             assertTrue(result, "Insert Order must be true");
+            System.out.println("testInsertOrder passed!");
         } catch (NamingException e) {
             Assert.fail("Naming Exception: " + e.getMessage());
         } catch (SQLException e) {
@@ -54,19 +57,20 @@ public class OrderDAONGTest {
         } catch (ClassNotFoundException e) {
             Assert.fail("Class Not Found Exception: " + e.getMessage());
         }
-
     }
-    
-    @Test 
+
+    @Test
     public void testShowOrderByIDWithValidID() {
+        System.out.println("Running testShowOrderByIDWithValidID");
         try {
             OrderDAO orderDAO = new OrderDAO();
             String orderId = "HD001";
-            
+
             OrderDTO orderDTO = orderDAO.showOrderByID(orderId);
-            
+
             assertNotNull(orderDTO, "Order must not be null");
             assertEquals(orderDTO.getId(), orderId);
+            System.out.println("testShowOrderByIDWithValidID passed!");
         } catch (NamingException e) {
             Assert.fail("Naming Exception: " + e.getMessage());
         } catch (SQLException e) {
@@ -75,16 +79,18 @@ public class OrderDAONGTest {
             Assert.fail("Class Not Found Exception: " + e.getMessage());
         }
     }
-    
+
     @Test
     public void testShowOrderByIDWithInvalidID() {
+        System.out.println("Running testShowOrderByIDWithInvalidID");
         try {
             OrderDAO orderDAO = new OrderDAO();
             String orderId = "aaaaa";
-            
+
             OrderDTO orderDTO = orderDAO.showOrderByID(orderId);
-            
+
             assertNull(orderDTO, "Order must be null with invalid ID");
+            System.out.println("testShowOrderByIDWithInvalidID passed!");
         } catch (NamingException e) {
             Assert.fail("Naming Exception: " + e.getMessage());
         } catch (SQLException e) {

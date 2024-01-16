@@ -29,7 +29,6 @@ import khoatha.utils.MyApplicationConstants;
 public class BookStoreServlet extends HttpServlet {
 
 //    private final String BOOKSTORE_PAGE = "bookStore.jsp";
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,7 +40,7 @@ public class BookStoreServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         //0. get current context
+        //0. get current context
         ServletContext context = this.getServletContext();
         Properties siteMaps = (Properties) context.getAttribute("SITEMAPS");
         response.setContentType("text/html;charset=UTF-8");
@@ -55,11 +54,13 @@ public class BookStoreServlet extends HttpServlet {
             dao.showProductList();
             List<ProductDTO> result = dao.getProductList();
             request.setAttribute("BOOK_LIST", result);
-            
+
         } catch (NamingException ex) {
             log("BookStoreServlet _ Naming: " + ex.getMessage());
         } catch (SQLException ex) {
             log("BookStoreServlet _ SQL: " + ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            log("BookStoreServlet _ ClassNotFound: " + ex.getMessage());
         } finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

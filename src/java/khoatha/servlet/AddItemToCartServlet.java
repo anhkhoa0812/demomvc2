@@ -84,6 +84,9 @@ public class AddItemToCartServlet extends HttpServlet {
 
         } catch (NamingException ex) {
             log("AddItemToCartServlet _ Naming: " + ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            log("AddItemToCartServlet _ ClassNotFound: " + ex.getMessage());
+
         } catch (NumberFormatException ex) {
             log("AddItemToCartServlet _ NumberFormat: " + ex.getMessage());
             request.setAttribute("ERROR_NUMBERFORMAT", MyApplicationConstants.AddItemToCartFeature.ERROR_NUMBERFORMAT);
