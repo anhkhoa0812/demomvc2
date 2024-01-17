@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SE173070Assignment">
+    <test name="OrderDTONGTest">
+        <parameter name="id" value="OD123"/>
+        <parameter name="total" value="50.0F"/>     
+        <classes>
+            <class name="khoatha.order.OrderDTONGTest"/>
+        </classes>
+    </test>
+    <test name="OrderDAONGTest">
+        <parameter name="validID" value="HD001"/>
+        <parameter name="inValidID" value="aaaaa"/>
+        <classes>
+            <class name="khoatha.order.OrderDAONGTest"/>
+        </classes>
+    </test>
+
+
+</suite>

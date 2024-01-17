@@ -8,6 +8,8 @@ package khoatha.order;
 import java.sql.Date;
 import static org.testng.Assert.*;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 /**
@@ -18,31 +20,24 @@ public class OrderDTONGTest {
 
     public OrderDTONGTest() {
     }
-
+    
+    
     @Test
-    public void testGetterAndSetter() {
+    @Parameters({"id","total"})
+    public void testGetterAndSetter(@Optional("OD123") String id, @Optional("50.0F")float total) {
         System.out.println("Running testGetterAndSetter");
         OrderDTO orderDTO = new OrderDTO();
 
-        orderDTO.setId("OD123");
+        orderDTO.setId(id);
         orderDTO.setoDate(new java.sql.Date(System.currentTimeMillis()));
-        orderDTO.setTotal(50.0F);
+        orderDTO.setTotal(total);
 
-        assertEquals(orderDTO.getId(), "OD123");
-        assertEquals(orderDTO.getTotal(), 50.0F);
+        assertEquals(orderDTO.getId(), id);
+        assertEquals(orderDTO.getTotal(), total);
         assertNotNull(orderDTO.getoDate());
         System.out.println("testGetterAndSetter passed!");
 
     }
-//    @Test
-//    public void testContructor() {
-//        java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
-//        OrderDTO orderDTO = new OrderDTO("OD123", currentDate, 50.0F);
-//        
-//        assertEquals(orderDTO.getId(), "OD123");
-//        assertEquals(orderDTO.getoDate(), currentDate);
-//        assertEquals(orderDTO.getTotal(), 50.0F);
-//    }
 
     @DataProvider(name = "orderData")
     public Object[][] orderData() {

@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import javax.naming.NamingException;
 import org.testng.Assert;
 import static org.testng.Assert.*;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 /**
@@ -28,7 +30,7 @@ public class OrderDAONGTest {
         try {
             int count = orderDAO.countOrder();
 
-            Assert.assertEquals(count, 19);
+            Assert.assertEquals(count, 23);
             System.out.println("testCountOrder passed! Count: " + count);
         } catch (NamingException e) {
             Assert.fail("Naming Exception: " + e.getMessage());
@@ -44,7 +46,7 @@ public class OrderDAONGTest {
         System.out.println("Running testInsertOrder");
         try {
             OrderDAO orderDAO = new OrderDAO();
-            String orderId = "OD126";
+            String orderId = "OD536";
             float total = 100.0F;
 
             boolean result = orderDAO.insertOrder(orderId, total);
@@ -60,16 +62,17 @@ public class OrderDAONGTest {
     }
 
     @Test
-    public void testShowOrderByIDWithValidID() {
+    @Parameters("validID")
+    public void testShowOrderByIDWithValidID(@Optional("HD001") String validID) {
         System.out.println("Running testShowOrderByIDWithValidID");
         try {
             OrderDAO orderDAO = new OrderDAO();
-            String orderId = "HD001";
+//            String orderId = "HD001";
 
-            OrderDTO orderDTO = orderDAO.showOrderByID(orderId);
+            OrderDTO orderDTO = orderDAO.showOrderByID(validID);
 
             assertNotNull(orderDTO, "Order must not be null");
-            assertEquals(orderDTO.getId(), orderId);
+            assertEquals(orderDTO.getId(), validID);
             System.out.println("testShowOrderByIDWithValidID passed!");
         } catch (NamingException e) {
             Assert.fail("Naming Exception: " + e.getMessage());
@@ -81,13 +84,15 @@ public class OrderDAONGTest {
     }
 
     @Test
-    public void testShowOrderByIDWithInvalidID() {
+    @Parameters("inValidID")
+    public void
+         testShowOrderByIDWithInvalidID(@Optional("aaaaa") String inValidID) {
         System.out.println("Running testShowOrderByIDWithInvalidID");
         try {
             OrderDAO orderDAO = new OrderDAO();
-            String orderId = "aaaaa";
+//            String orderId = "aaaaa";
 
-            OrderDTO orderDTO = orderDAO.showOrderByID(orderId);
+            OrderDTO orderDTO = orderDAO.showOrderByID(inValidID);
 
             assertNull(orderDTO, "Order must be null with invalid ID");
             System.out.println("testShowOrderByIDWithInvalidID passed!");
